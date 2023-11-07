@@ -2,6 +2,7 @@ package com.capitole.tecnicaltest.price.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
@@ -11,6 +12,7 @@ import java.util.Date;
 @Table(name = "PRICES")
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 public class PriceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

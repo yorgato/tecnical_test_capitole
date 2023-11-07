@@ -16,7 +16,7 @@ class PriceController {
 
     @Autowired
     private final DomainPriceServiceImpl priceService;
-    static final String PRICE_LIST_PATH = "getPrice";
+    static final String PRICE_LIST_PATH = "/getPrice";
 
     PriceController(DomainPriceServiceImpl priceService) {
         this.priceService = priceService;

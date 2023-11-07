@@ -17,6 +17,8 @@ public class DomainPriceServiceImpl implements DomainPriceService {
 
     @Override
     public Price getPriceByDate(LocalDateTime date, Long productId, Long brandId) {
-        return priceRepository.getPriceByDate(date, productId, brandId).get();
+        Price price = priceRepository.getPriceByDate(date, productId, brandId).get();
+        price.setApplicationDate(date);
+        return price;
     }
 }

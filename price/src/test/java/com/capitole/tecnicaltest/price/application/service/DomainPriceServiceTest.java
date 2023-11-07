@@ -1,7 +1,7 @@
 package com.capitole.tecnicaltest.price.application.service;
 
 import com.capitole.tecnicaltest.price.domain.model.Price;
-import com.capitole.tecnicaltest.price.infrastructure.adapter.PriceRepositoryH2Impl;
+import com.capitole.tecnicaltest.price.infrastructure.adapter.PriceRepositoryImpl;
 import com.capitole.tecnicaltest.price.infrastructure.exception.PriceNotFoundException;
 import com.capitole.tecnicaltest.price.util.DateUtils;
 import org.junit.jupiter.api.Assertions;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 class DomainPriceServiceTest {
 
     @Mock
-    private PriceRepositoryH2Impl priceRepository;
+    private PriceRepositoryImpl priceRepository;
     private final Long productId = 35455L;
     private final Long brandId = 1L;
 
@@ -66,12 +66,8 @@ class DomainPriceServiceTest {
     }
 
     protected Price getPrice(String applicationDate) {
-        return Price
-                .builder()
-                .applicationDate(DateUtils.parseToLocalDateTime(applicationDate))
-                .productId(productId)
-                .brandId(brandId)
-                .build();
+        return new Price(DateUtils.parseToLocalDateTime(applicationDate)
+                , productId, brandId, null, null);
     }
 
 }
