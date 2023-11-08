@@ -1,6 +1,7 @@
 package com.capitole.tecnicaltest.price.infrastructure.web.controller;
 
 import com.capitole.tecnicaltest.price.application.service.DomainPriceServiceImpl;
+import com.capitole.tecnicaltest.price.infrastructure.exception.ValidationException;
 import com.capitole.tecnicaltest.price.util.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
